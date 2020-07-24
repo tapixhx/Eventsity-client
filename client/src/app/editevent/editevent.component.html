@@ -1,0 +1,222 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Be+Vietnam|Lato&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container fonts">
+    <hr style="opacity: 0;">
+    <div class="col-md-2">
+        <button class="glyphicon glyphicon-arrow-left back" (click)="back()"></button>
+    </div>
+    <div class="col-md-8">
+        <h3 style="font-size:30px;">
+        <b>CHANGE OF PLAN?? NO WORRIES START EDITING YOUR EVENT HERE!!</b></h3>
+        <h2 style="color:#1DD5D8;">We will update it for you..</h2>
+        <hr>
+    </div>
+</div>
+<hr style="opacity: 0;">
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="assets/images/editevent.png" class="edit" alt="edit">
+        </div>
+        <div class="col-md-7 box">
+            <h3 style="text-align:center;">Start Editing Here</h3>
+                <form (ngSubmit)="onUpdate(f)" #f="ngForm">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group formfont">
+                                <label for="ename">Event Name</label>
+                                <input
+                                placeholder="Event Name"
+                                type="text" 
+                                id="ename" 
+                                name="ename"
+                                class="form-control"
+                                ngModel
+                                required
+                                #ename="ngModel">
+                                <span 
+                                class="help-block" 
+                                *ngIf="!ename.valid && ename.touched"
+                                style="color:red;">Enter a valid Event Name</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="imagePath">Event Image URL</label>
+                                <input
+                                placeholder="Image URL"
+                                name="imagePath"
+                                type="text" 
+                                id="imagePath" 
+                                class="form-control"
+                                ngModel
+                                required
+                                #imagePath
+                                #imgPath="ngModel">
+                                <span 
+                                class="help=block" 
+                                *ngIf="!imgPath.valid && imgPath.touched"
+                                style="color:red;">Enter a Valid Image URL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="category">Category of Event</label>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input 
+                                        type="radio" 
+                                        name="category"
+                                        value="Entertainment"
+                                        style="margin : 5px 5px;"
+                                        ngModel
+                                        required> Entertainment
+                                        <input 
+                                        type="radio" 
+                                        name="category"
+                                        value="Social"
+                                        style="margin : 5px 5px;"
+                                        ngModel
+                                        required> Social
+                                        <input 
+                                        type="radio" 
+                                        name="category"
+                                        value="Sports"
+                                        style="margin : 5px 5px;"
+                                        ngModel
+                                        required> Sports
+                                        <input 
+                                        type="radio"
+                                        name="category" 
+                                        value="Technology"
+                                        style="margin : 5px 5px;"
+                                        ngModel
+                                        required> Technology
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="evenue">Short Venue</label>
+                                <input
+                                placeholder="Short Venue"
+                                type="text" 
+                                id="evenue" 
+                                name="evenue"
+                                class="form-control"
+                                ngModel
+                                required
+                                #evenue="ngModel">
+                                <span
+                                class="help-block"
+                                *ngIf="!evenue.valid && evenue.touched"
+                                style="color:red;">Enter Venue of Event</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="fevenue">Full Venue</label>
+                                <input
+                                placeholder="Full Venue"
+                                type="text" 
+                                id="fevenue" 
+                                name="fevenue"
+                                class="form-control"
+                                ngModel
+                                required
+                                #fevenue="ngModel">
+                                <span
+                                class="help-block"
+                                *ngIf="!fevenue.valid && fevenue.touched"
+                                style="color:red;">Enter detailed Address</span>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input 
+                                placeholder="dd/mm/yyyy"
+                                type="text"
+                                id="date"
+                                name="date"
+                                pattern="\d{1,2}/\d{1,2}/\d{4}"
+                                class="form-control"
+                                ngModel
+                                required
+                                #date="ngModel">
+                                <span
+                                class="help-block"
+                                *ngIf="!date.valid && date.touched"
+                                style="color:red;">Enter Date of Event</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="description">Description of Event</label>
+                                <textarea
+                                placeholder="Enter description of event"
+                                rows="5" 
+                                id="description" 
+                                name="description"
+                                class="form-control"
+                                ngModel
+                                required
+                                #description="ngModel"></textarea>
+                                <span
+                                class="help-block"
+                                *ngIf="!description.valid && description.touched"
+                                style="color:red;">Enter description of the Event</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="orgname">Organiser Name</label>
+                                <input
+                                placeholder="Organiser Name"
+                                type="text" 
+                                id="orgname" 
+                                name="orgname"
+                                class="form-control"
+                                ngModel
+                                required
+                                #orgname="ngModel">
+                                <span
+                                class="help-block"
+                                *ngIf="!orgname.valid && orgname.touched"
+                                style="color:red;">Enter Name of Organiser</span>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-xs-12 button">
+                            <button 
+                            type="submit" 
+                            class="btn btn-success mybutton"
+                            [disabled]="!f.valid" style="margin-right : 10px;">Update Event</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-danger mybutton2"
+                            (click)="onCancel()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

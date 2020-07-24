@@ -1,0 +1,47 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-7"><img src="../../assets/images/verify.png" class="img" alt="verify1"></div>
+            <div class="col-md-5 box">       
+            <h3 style="color:#0DBDE0;"><b>Verify Your Credentials</b></h3>
+            <hr style="opacity:0;">
+            <form (ngSubmit)="Verify(f)" #f="ngForm" class="myform">
+                <div *ngIf="!resend">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="otp">Enter OTP</label>
+                            <input
+                            type="text" 
+                            id="otp" 
+                            name="otp"
+                            class="form-control"
+                            ngModel
+                            required
+                            #verify="ngModel">
+                            <span 
+                            class="help-block" 
+                            style="color:blue;">OTP will expire within 2 minutes</span>
+                        </div>
+                    </div>
+                </div>
+                <button 
+                    type="submit" 
+                    class="btn btn-success mybutton"
+                    [disabled]="!f.valid" style="margin-right : 10px;">Verify</button>
+                </div>
+                <div *ngIf="resend">
+                    <button
+                    (click)="onResend()"  
+                    class="btn btn-primary"
+                    style="margin-right : 10px;">Resend OTP</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

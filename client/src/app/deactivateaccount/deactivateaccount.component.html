@@ -1,0 +1,37 @@
+<style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<hr style="opacity:0;">
+<div class="container">
+        <div class="col-md-3">
+                <button class="glyphicon glyphicon-arrow-left back" (click)="back()"></button>
+        </div>
+        <div class="col-md-6 box">
+                <h3 class="text-center"><b>Verify Before Deactivation</b></h3>
+                <hr style="opacity:0;">
+                <form (ngSubmit)="onDeactivate(f)" #f="ngForm">
+                        <div class="form-group">
+                                <label for="password">Confirm Password</label>
+                                <input
+                                placeholder = "Confirm Password"
+                                type="password" 
+                                id="cpassword" 
+                                name="cpassword" 
+                                ngModel 
+                                class="form-control"
+                                required 
+                                [minlength]="6"
+                                #password="ngModel">
+                                <span
+                                class="help-block"
+                                *ngIf="!password.valid && password.touched"
+                                style="color:red;">Enter minimum 6 character password</span>
+                        </div>
+                        <button
+                        class="btn mybutton"
+                        type="submit">Deactivate</button>
+                </form>
+        </div>
+        <div class="col-md-3"></div>
+</div>

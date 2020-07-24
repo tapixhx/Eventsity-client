@@ -1,0 +1,41 @@
+textarea.ng-touched.ng-invalid {
+    border:2px solid red;
+}
+.box {
+    width:35%;
+    margin-top:10rem;
+    padding: 20px 35px ;
+    margin-left:20px;
+    box-shadow: 2px 2px 18px 5px rgba(0,0,0,0.1);
+    font-family: 'Rubik', sans-serif;
+}
+.mybutton {
+    margin-left: 12rem;
+    background-color:transparent;
+    border:2px solid #13B9F3;
+    color : black;
+}
+.mybutton:hover {
+    background-color:#13B9F3;
+    border:2px solid #13B9F3;
+    color : white;
+    transition: all 0.2s ease-in-out;
+}
+.mybutton:focus {
+    outline:none;
+}
+.back {
+    height:35px;
+    width:35px;
+    border:2px solid black;
+    color:black;
+    border-radius: 10px;
+    margin-top:25px;
+    margin-left:25px;
+    background-color:transparent;
+}
+.back:hover {
+    color:white;
+    background-color:black;
+    transition:all 0.3s ease-in-out;
+}

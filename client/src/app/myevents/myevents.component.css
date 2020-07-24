@@ -1,0 +1,154 @@
+.box {
+    background: url(../../assets/images/ticketminimilistic.jpg);
+    background-size : cover;
+    border : 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.robo {
+    height : 25rem; 
+}
+.boxparent {
+    font-family: 'PT Sans', sans-serif;
+    padding : 5px 15px;
+    width : 95%;
+    background-color: #FFB0EC;
+    box-shadow : 2px 2px 10px 5px rgba(0,0,0,0.1);
+    text-align : center;
+}
+.boxparent2 {
+    font-family: 'PT Sans', sans-serif;
+    padding : 5px 15px;
+    width : 95%;
+    background-color: #FFFB85;
+    box-shadow : 2px 2px 10px 5px rgba(0,0,0,0.1);
+    text-align : center;
+}
+/* .box:hover {
+    border : 1px solid black;
+    box-shadow : 5px 5px 15px black;
+    transition : all 0.3s ease-in-out;
+} */
+.box1 {
+    height:14rem;
+    width:50rem;
+    border:0;
+    background-color : #FBFAF8;
+}
+.box1:hover {
+    box-shadow: 2px 2px 10px 5px rgba(0,0,0,0.1);
+    transition:all 0.7s ease-in-out;
+}
+.col-xs-12 {
+    padding : 0px 0px;
+}
+.font h2 {
+    font-family: 'Righteous', cursive;
+    /* font-family: 'Ubuntu', sans-serif; */
+    color:#BB0DE0;
+    font-size : 45px;
+}
+.font {
+    margin-top : 50px;
+}
+.font p {
+    font-family: 'Ubuntu', sans-serif;
+    color : #0DBDE0;
+    font-size : 25px;
+}
+.delete {
+    margin-top:10px;
+    margin-bottom: 60px;
+    border:2px solid red;
+    background-color:transparent;
+    padding : 5px 10px;
+    color:red;
+    border-radius:5px;
+    margin-right : 5px;
+}
+.delete:hover {
+    background-color: red;
+    color:white;
+    transition: all 0.5s ease-in-out;
+}
+.delete:focus {
+    outline:none;
+}
+.edit {
+    margin-top:10px;
+    margin-bottom: 60px;
+    border:2px solid blue;
+    background-color:transparent;
+    padding : 5px 10px;
+    color:blue;
+    border-radius:5px;
+    margin-right : 5px;
+}
+.edit:hover {
+    background-color: blue;
+    color:white;
+    transition: all 0.5s ease-in-out;
+}
+.edit:focus {
+    outline:none;
+}
+.account {
+    margin-top:50px;
+    height:20rem;
+    width:22rem;
+    font-family: 'Ubuntu', sans-serif;
+    background-color:white;    
+    box-shadow: 2px 2px 10px 5px rgba(0,0,0,0.1);
+}
+.btn:focus {
+    outline:none;
+}
+.show {
+    margin-left:1rem;
+    margin-top:8rem;
+    border:1px solid #433C3B;
+    border-radius:0px;
+    background-color:white;
+    color:#433C3B;
+}
+.show:hover {
+    background-color:#433C3B;
+    color:white;
+    transition:all 0.4s ease-in-out;
+}
+.hideb {
+    margin-left:60px;
+    border:1px solid #433C3B;
+    background-color:transparent;
+    border-radius:0px;
+    color:#433C3B;
+}
+.hideb:hover {
+    background-color:#433C3B;
+    color:white;
+    transition:all 0.4s ease-in-out;
+}
+.logoutall {
+    border:2px solid #2FB910;
+    background-color:transparent;
+    border-radius:0px;
+    color:#2FB910;
+    margin-bottom:10px;
+}
+.logoutall:hover {
+    background-color:#2FB910;
+    color:white;
+    transition:all 0.4s ease-in-out;
+}
+.deactivate {
+    border:2px solid #FF412E;
+    background-color:transparent;
+    color:#FF412E;
+    border-radius:0px;
+    margin-bottom:10px;
+    margin-left:14px; 
+}
+.deactivate:hover {
+    background-color:#FF412E;
+    color:white;
+    transition:all 0.4s ease-in-out;
+}

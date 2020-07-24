@@ -1,0 +1,94 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container">
+    <hr style="opacity:0;">
+    <div class="row">
+        <div class="col-md-5"><img src="assets/images/signupman.png" class="man" alt="signup"></div>
+        <div class="col-md-7 box">
+            <div class="head">
+                <h4><b>LET'S CREATE YOUR ACCOUNT</b></h4>
+                <p>It won't take more than a few minutes, we promise :)</p>
+            </div>
+            <form (ngSubmit)="onSignup(f)" #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                    placeholder = "Name" 
+                    type="name" 
+                    id="name" 
+                    name="name" 
+                    ngModel 
+                    class="form-control"
+                    required 
+                    #name="ngModel">
+                    <span 
+                    class="help-block"
+                    *ngIf="!name.valid && name.touched"
+                    style="color:red;">Enter a valid Name</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input 
+                    placeholder = "E-Mail"
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    ngModel
+                    class="form-control"
+                    required
+                    #email="ngModel">
+                    <span 
+                    class="help-block"
+                    *ngIf="!email.valid && email.touched"
+                    style="color:red;">Enter valid E-mail</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                    placeholder = "Password"
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    ngModel 
+                    class="form-control"
+                    required 
+                    [minlength]="6"
+                    #password="ngModel">
+                    <span
+                    class="help-block"
+                    *ngIf="!password.valid && password.touched"
+                    style="color:red;">Enter minimum 6 character password</span>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword">Confirm Password</label>
+                    <input
+                    placeholder = "Confirm Password"
+                    appConfirmPassword="password"
+                    type="password" 
+                    id="cpassword" 
+                    name="cpassword" 
+                    ngModel 
+                    class="form-control"
+                    required 
+                    [minlength]="6"
+                    #cpassword="ngModel">
+                    <span
+                    class="help-block"
+                    *ngIf="cpassword.touched && cpassword.errors?.required "
+                    style="color:red;">Confirm Password is required</span>
+                    <span
+                    class="help-block"
+                    *ngIf="cpassword.touched && cpassword.errors?.notEqual &&
+                    !cpassword.errors?.required" 
+                    style="color:red;">Password doesn't match</span>
+                </div>
+                <button type="submit" class="btn btn-success mybutton"  [disabled]="!f.valid">SignUp</button>
+            </form>
+            <p class="foot">Already on EventSity ? <a routerLink='/login'>LogIn</a></p>
+        </div>
+    </div>
+    <hr style="opacity:0;">
+</div>

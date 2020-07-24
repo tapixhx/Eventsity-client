@@ -1,0 +1,130 @@
+.main{
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    background-size:cover;
+    background-repeat: no-repeat;
+    animation : slide 18s alternate infinite;
+    height:90vh;
+    width:100%;
+}
+@keyframes slide {
+    0%{background:url( ../../assets/images/ss1.jpg);}
+    25%{background:url( ../../assets/images/ss3.jpg);}
+    50%{background:url( ../../assets/images/ss2.jpg);}
+    100%{background-image:url( ../../assets/images/ss4.jpg);}
+}
+/* .content { */
+    /* margin-top : 14em;
+    margin-left : 20em; */
+    /* position : relative;
+    top:35%;
+    left:25%;
+    color : white;
+} */
+.line {
+    border : 7px solid white;
+    /* box-shadow: 2px 2px 5px 2px white; */
+    position:relative;
+    /* border-radius:10px; */
+    z-index:2;
+}
+.shadow {
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing : 2px;
+    position: relative;
+    z-index:2;
+}
+.ent {
+    background : url(../../assets/images/entertainmenthome.jpe);
+    height : 25em;
+    background-size : cover;
+    border-radius : 10px;
+}
+.soc {
+    background : url(../../assets/images/socialhome.jpe);
+    height : 11em;
+    background-size : cover;
+    border-radius : 10px;
+}
+.sports {
+    background : url(../../assets/images/marathonhome.jpe);
+    height : 11em;
+    background-size : cover;
+    border-radius : 10px;
+}
+.tech {
+    background : url(../../assets/images/techhome.jpe);
+    height : 25em;
+    background-size : cover;
+    border-radius : 10px;
+}
+.fullimg {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    color : white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    letter-spacing: 3px;
+}
+.halfimg {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    color : white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    letter-spacing: 3px;
+}
+.box {
+    font-family: 'Montserrat', sans-serif;
+}
+.box:hover {
+    animation : increase 1s ; 
+    box-shadow : 1px 1px 20px 1px rgba(0,0,0,0.4);
+}
+@keyframes increase {
+    0%{transform : scale(1.01);}
+    50%{transform : scale(1.05);}
+}
+.category {
+    font-family: 'Exo 2', sans-serif;
+    font-size:40px;
+    text-align : center;
+    color : #BB0DE0;
+    padding-bottom : 30px;
+}
+.desc {
+    text-align : center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding : 10px;
+}
+.overlay {
+    position:absolute;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0,0,0,0.7);
+    top:0;
+    left:0;
+}
+.overlayside {
+    position:absolute;
+    height:25em;
+    border-radius:10px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    top:0;
+    left:0;
+}
+.overlaymid {
+    position:absolute;
+    height:11em;
+    border-radius:10px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    top:0;
+    left:0;
+}

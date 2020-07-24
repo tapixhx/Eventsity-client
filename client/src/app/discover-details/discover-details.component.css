@@ -1,0 +1,79 @@
+.img {
+    
+    /* border : 5px solid yellow; */
+    /* border-radius : 10px; */
+    width:100%;
+    height:400px;
+}
+.row {
+    margin-right:0px;
+}
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    color:#FF2193
+}
+.back {
+    height:35px;
+    width:35px;
+    border:2px solid black;
+    color:black;
+    border-radius: 10px;
+    margin-top:25px;
+    margin-left:25px;
+    background-color:transparent;
+}
+.back:hover {
+    color:white;
+    background-color:black;
+    transition:all 0.3s ease-in-out;
+}
+.back:focus {
+    outline:none;
+}
+.font {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.fontdesc {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+.box {
+    background-color : white;
+    padding:50px;
+    text-align : center;
+    height : 17em;
+    width : 20em;
+    margin-left : 80px;
+    margin-top : 20px;
+    border-radius : 5px;
+    box-shadow: 2px 2px 18px 5px rgba(0,0,0,0.2);
+}
+.userbtn {
+    padding : 5px 10px;
+    margin-top : 5px;
+    background-color : transparent;
+    border-radius: 10px;
+    color:#FA0580;
+    border : 2px solid #FA0580;
+}
+.head {
+    font-family: 'Poppins', sans-serif;
+    color: #B24DDE;
+    text-align: center;
+    padding-bottom : 10px;
+}
+.userbtn:hover {
+    color : white;
+    background-color : #FA0580;
+    transition: all 0.3s ease-in-out;
+}
+.authbutton {
+    border : 2px solid #FF0915;
+    color : #FF0915;
+    background-color : transparent;
+    
+}
+.authbutton:focus {
+    outline:none;
+}

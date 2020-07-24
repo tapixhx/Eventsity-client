@@ -1,0 +1,50 @@
+.box {
+    width:35%;
+    margin-left:5rem;
+    padding: 20px 35px ;
+    margin-top:35px;
+    box-shadow: 2px 2px 18px 5px rgba(0,0,0,0.1);
+}
+.container h1 {
+    font-family: 'PT Sans', sans-serif;
+    color : #0DBDE0;
+    text-align: center;
+}
+.mybutton {
+    border : 2px solid #CA0650;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: transparent;
+    border-radius: 10px;
+    color: #CA0650;
+    margin-left: 11rem;
+}
+.mybutton:hover {
+    border : 2px solid #CA0650;
+    background-color: #CA0650;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.4s ease-in-out;
+}
+.head {
+    text-align : center;
+    color : #0DBDE0;
+    font-family: 'Roboto', sans-serif;
+}
+.mybutton:focus {
+    outline:none;
+}
+.back {
+    height:35px;
+    width:35px;
+    border:2px solid black;
+    color:black;
+    border-radius: 10px;
+    margin-top:25px;
+    margin-left:25px;
+    background-color:transparent;
+}
+.back:hover {
+    color:white;
+    background-color:black;
+    transition:all 0.3s ease-in-out;
+}

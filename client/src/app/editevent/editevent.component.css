@@ -1,0 +1,71 @@
+input.ng-invalid.ng-touched {
+    border : 2px solid red;
+}
+textarea.ng-invalid.ng-touched {
+    border : 2px solid red;
+}
+.fonts {
+    text-align:center;
+    color:#9E36DA;
+    font-family: 'Be Vietnam', sans-serif;
+}
+.box {
+    width:41%;
+    font-family: 'Lato', sans-serif;
+    margin-left:100px;
+    padding: 20px 35px ;
+    margin-top:20px;
+    box-shadow: 2px 2px 18px 5px rgba(0,0,0,0.1);
+}
+.edit {
+    margin-top:25px;
+    width : 50rem;
+    height : 75rem;
+}
+.button {
+    margin-left : 10rem;
+}
+.mybutton {
+    background-color : transparent;
+    color : green;
+    border : 2px solid green;
+}
+.mybutton2 {
+    background-color : transparent;
+    color : red;
+    border : 2px solid red;
+}
+.mybutton:hover {
+    background-color: green;
+    color:white;
+    transition : all 0.4s ease-in-out;
+}
+.mybutton2:hover {
+    background-color: red;
+    color:white;
+    transition : all 0.4s ease-in-out;
+}
+.mybutton:focus {
+    outline:none;
+}
+.mybutton2:focus {
+    outline:none;
+}
+.back {
+    height:35px;
+    width:35px;
+    border:2px solid black;
+    color:black;
+    border-radius: 10px;
+    margin-top:25px;
+    margin-left:25px;
+    background-color:transparent;
+}
+.back:hover {
+    color:white;
+    background-color:black;
+    transition:all 0.3s ease-in-out;
+}
+.back:focus {
+    outline:none;
+}

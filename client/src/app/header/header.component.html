@@ -1,0 +1,50 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Livvic|Ubuntu&display=swap');
+</style>
+<nav class="navbar navbar-default head">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a routerLink="/" 
+            class="navbar-brand fstyle" 
+            style="color:black;margin-top:5px;">
+            <span><img src="assets/images/tab.png" class="logo" alt="logo">  EventSity</span></a>
+        </div>
+        <div class="navbar-default">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" class="hcolor">
+                    <a routerLink='/discover' 
+                    style="color:black;margin-top:5px;">
+                    <span class="glyphicon glyphicon-fire"></span>  Discover</a></li>
+                <li 
+                routerLinkActive="active" 
+                class="hcolor">
+                <a routerLink='/create' 
+                style="color:black;margin-top:5px;">
+                <span class="glyphicon glyphicon-pencil"></span>  Create</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right content">
+                <li><a routerLink='/login' class="user">
+                    <button 
+                    class="mybutton" 
+                    *ngIf="!authservice.loggedIn()">
+                    <span class="glyphicon glyphicon-log-in"></span>  LogIn</button></a></li>
+                <li><a routerLink='/signup' class="user">
+                    <button 
+                    class="mybutton" 
+                    *ngIf="!authservice.loggedIn()">
+                    <span class="glyphicon glyphicon-flash"></span> SignUp</button></a></li>
+                <li><a routerLink='/myevents' class="user">
+                    <button 
+                    class="mybutton" 
+                    *ngIf="authservice.loggedIn()"><span 
+                    class="glyphicon glyphicon-user"></span>  My Profile</button></a></li>
+                <li>
+                    <button 
+                    class="mybutton2"  
+                    *ngIf="authservice.loggedIn()" (click)="authservice.logout()">
+                    <span class="glyphicon glyphicon-log-out"></span> LogOut</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="line"></div>
+</nav>

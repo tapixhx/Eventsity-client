@@ -1,0 +1,78 @@
+h1{
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Bree Serif', serif; */
+    color : #9E36DA;
+    text-align : center;
+}
+button {
+    height : 10em;
+    width : 10em;
+    color : white;
+    border : 0px;
+    border-radius: 10px;
+    text-decoration:none;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 2px;
+}
+button:hover {
+    box-shadow:2px 2px 15px 5px rgba(0,0,0,0.3);
+    transition: all 0.4s ease-in-out;
+}
+.entcat {
+    background : url(../../assets/images/entertainmentdiscover.jpe);
+    background-size : cover;
+}
+.soccat {
+    background : url(../../assets/images/socialdiscover.jpe);
+    background-size : cover;
+}
+.techcat {
+    background : url(../../assets/images/technologydiscover.jpe);
+    background-size : cover;
+}
+.sportscat {
+    background : url(../../assets/images/sportsbutton.jpg);
+    background-size : cover;
+}
+.box {
+    background:url(../../assets/images/parentbackground.jpg);
+    border:0px;
+}
+.box:hover {
+    background-color : black;
+    border : 1px solid black;
+    box-shadow : 5px 5px 15px rgba(0,0,0,0.5);
+    animation : increase 1s ; 
+}
+@keyframes increase {
+    0%{transform : scale(1.01);}
+    50%{transform : scale(1.03);}
+}
+.cust {
+    height : 60px;
+    width:200px;
+}
+.org {
+    font-family: 'Montserrat', sans-serif;
+    color:#9E36DA;
+    text-align:center;
+}
+/* .background {
+    background: url('../../assets/images/parentbackground.jpe');
+} */
+.overlay {
+    position:absolute;
+    /* padding:1px 6px; */
+    width: 10em;
+    height: 10em;
+    background-color: rgba(0,0,0,0.4);
+    border-radius:10px;
+    top:0;
+    left:14px;
+}
+.mybutton:focus {
+    outline : none;
+}

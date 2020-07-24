@@ -1,0 +1,58 @@
+.head img {
+    height:30em;
+    width:90%;
+}
+input.ng-invalid.ng-touched {
+    border : 2px solid red;
+}
+textarea.ng-invalid.ng-touched {
+    border : 2px solid red;
+}
+.box {
+    width:41%;
+    margin-left:100px;
+    padding: 20px 35px ;
+    margin-top:20px;
+    box-shadow: 2px 2px 18px 5px rgba(0,0,0,0.1);
+}
+.man {
+    height :80rem;
+    width: 50rem;
+}
+.button {
+    margin-left : 12.5rem;
+}
+.mybutton {
+    border: 2px solid yellowgreen;
+    background-color : transparent;
+    color : yellowgreen;
+}
+.mybutton2 {
+    border: 2px solid red;
+    background-color : transparent;
+    color : red;
+}
+.mybutton:hover {
+    background-color: yellowgreen;
+    color:white;
+    border : 2px solid yellowgreen;
+    transition: all 0.4s ease-in-out;
+}
+.mybutton2:hover {
+    background-color: red;
+    color:white;
+    border : 2px solid red;
+    transition: all 0.4s ease-in-out;
+}
+.fonts h3 {
+    font-family: 'Mansalva', cursive;
+}
+.fonts h4 {
+    font-family: 'Noto Sans', sans-serif;
+}
+.fonts p {
+    font-family: 'Poppins', sans-serif;
+}
+.formfont {
+    font-family: 'Source Sans Pro', sans-serif;
+}

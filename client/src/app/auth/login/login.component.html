@@ -1,0 +1,67 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Ubuntu&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7"><img src="assets/images/loginvector.png" class="man" alt="Login"></div>
+        <div class="col-md-5 box">
+            <div class="head">
+                <h4><b>HAPPY TO SEE YOU BACK!</b></h4>
+                <p>Let’s see how your events are doing</p>
+            </div>
+            <form (ngSubmit)="onLogin(f)" #f="ngForm">
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input 
+                    placeholder = "E-Mail"
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    ngModel 
+                    class="form-control" 
+                    required
+                    #email="ngModel">
+                    <span 
+                    class="help-block"
+                    *ngIf="!email.valid && email.touched"
+                    style="color:red;">Enter a valid Email</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                    placeholder = "Password"
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    ngModel 
+                    class="form-control" 
+                    required
+                    [minlength]="6"
+                    #password="ngModel">
+                    <span
+                    class="help-block"
+                    *ngIf="!password.valid && password.touched"
+                    style="color:red;">Enter minimum 6 character password</span>
+                </div>
+                <button type="submit" class="btn btn-success mybutton" [disabled]="!f.valid">LogIn</button>
+            </form>
+            <p class="foot">Don't have an account ? <a routerLink='/signup'>SignUp</a></p>
+        </div>
+    </div>
+    <hr style="opacity: 0;">
+    <div class="row">
+        <div class="col-xs-12 head">
+            <h4 style="letter-spacing: 2px;"><b>- LOGIN AND GET CONNECTED -</b></h4>
+        </div>
+    </div>
+    <hr style="opacity: 0;">
+    <div class="row">
+        <div class="col-sm-6 size head">
+            <img src="assets/images/login2.png" alt="login">
+        </div>
+        <div class="col-sm-6 size head">
+            <img src="assets/images/login3.png" alt="login">
+        </div>
+    </div>
+</div>

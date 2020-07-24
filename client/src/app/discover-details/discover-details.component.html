@@ -1,0 +1,66 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Acme|Montserrat|Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<div *ngIf = "show">
+<div class="row">
+    <img 
+    [src]="discover.imagePath" 
+    alt="{{ discover.ename }}" 
+    class="img-responsive img">
+</div>
+<button class="glyphicon glyphicon-arrow-left back" (click)="back()"></button>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1><b>{{ discover.ename }}</b></h1>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12 font">
+                        <b>Venue</b>: {{ discover.fevenue }}
+                    </div>
+                </div>
+                <div class="row" style="color : black;">
+                    <div class="col-xs-12 font">
+                        <b>Date</b> : {{ discover.date }}
+                    </div>
+                </div>
+                <hr style="opacity: 0;">
+                <div class="row" style="color : black;">
+                    <div class="col-xs-12 fontdesc">
+                        <p><b>Registrations</b> : {{ discover.registrations }}</p>
+                        <p><b>About Event</b> : {{ discover.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-xs-12 box" style="padding-top:10px;font-family: cursive;">
+                        <div><b>ORGANISER</b></div>
+                        <div>{{ discover.orgname }}</div>
+                        <div>
+                            <button 
+                            class="userbtn" 
+                            (click)="sendEnquiry()" 
+                            style="margin-top:10px;">Send Enquiry</button>
+                        </div>
+                        <hr>
+                        <div>
+                            <p style="font-size:15px;"><b>Interested? Register Now</b></p>
+                            <button 
+                            class="userbtn"
+                            (click)="register()">Register Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

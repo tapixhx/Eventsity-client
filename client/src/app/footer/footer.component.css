@@ -1,0 +1,28 @@
+.pad {
+    padding-top : 20px;
+}
+.color {
+    background-color : #FFD500;
+    color : black;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+}
+.colorend {
+    background-color: black;
+    letter-spacing:1px;
+    color : white;
+    padding : 5px;
+    font-family: 'Roboto', sans-serif;
+}
+.line {
+    border : 3px solid #0DBDE0;
+}
+.col-xs-12{
+    padding-bottom: 2rem;
+}
+.link {
+    text-decoration : none;
+    color : #F81010;
+    font-family: 'Manjari', sans-serif;
+    letter-spacing: 0.5px;
+}

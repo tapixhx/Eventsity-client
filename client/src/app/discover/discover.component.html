@@ -1,0 +1,208 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Josefin+Sans|Montserrat|Poppins|Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1><b>Events By Category</b></h1>
+        </div>
+    </div>
+    <hr style="opacity: 0;">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <button 
+                (click)="needentertainment()" 
+                class="entcat mybutton"><b>Entertainment</b></button>
+            </div>
+            <div class="col-md-2">
+                <button
+                (click)="needsocial()" 
+                class="soccat mybutton"><b>Social</b></button>
+            </div>
+            <div class="col-md-2">
+                <button 
+                (click)="needtechnology()" 
+                class="techcat mybutton"><b>Technology</b></button>
+            </div>
+            <div class="col-md-2">
+                <button 
+                (click)="needsports()" 
+                class="sportscat mybutton"><b>Sports</b></button>
+            </div> 
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <hr style="opacity: 0;">
+    <div *ngIf='ent'>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div
+                    *ngFor="let discover of discover; index as id">
+                        <div *ngIf="discover.category === 'Entertainment'">
+                            <a 
+                            style="cursor : pointer;"
+                            [routerLink]="['/discover',eventarray[id]]" 
+                            routerLinkActive="active"
+                            class="list-group-item clearfix box" style="margin-bottom:20px;">
+                                <div class="pull-left box1">
+                                    <h4 
+                                    class="list-group-item-heading" 
+                                    style="color:white;">{{ discover.ename }}</h4>
+                                    <p
+                                    class="list-group-item-text" 
+                                    style="color:white;">Venue : {{ discover.evenue }}</p>
+                                    <p 
+                                    class="list-group-item-text" 
+                                    style="color:white;">Registrations : {{ discover.registrations }}</p>
+                                </div>
+                                <span class="pull-right">
+                                    <img 
+                                    [src] = "discover.imagePath" 
+                                    alt="{{ discover.ename }}" 
+                                    class="img-responsive" 
+                                    style="max-height:50px;">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf='soc'>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                <div
+                *ngFor="let discover of discover; index as id">
+                    <div *ngIf="discover.category === 'Social'">
+                        <a 
+                        style="cursor : pointer;"
+                        [routerLink]="['/discover',eventarray[id]]"   
+                        routerLinkActive="active"
+                        class="list-group-item clearfix box" style="margin-bottom:20px;">
+                            <div class="pull-left box1">
+                                <h4 
+                                class="list-group-item-heading" 
+                                style="color:white;">{{ discover.ename }}</h4>
+                                <p class="list-group-item-text" style="color:white;">Venue : {{ discover.evenue }}</p>
+                                <p class="list-group-item-text" style="color:white;">Registrations : {{ discover.registrations }}</p>
+                            </div>
+                            <span class="pull-right">
+                                <img 
+                                [src] = "discover.imagePath" 
+                                alt="{{ discover.ename }}" 
+                                class="img-responsive" 
+                                style="max-height:50px;">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf='spo'>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div
+                    *ngFor="let discover of discover; index as id">
+                        <div *ngIf="discover.category === 'Sports'">
+                            <a 
+                            style="cursor : pointer;"
+                            [routerLink]="['/discover',eventarray[id]]"   
+                            routerLinkActive="active"
+                            class="list-group-item clearfix box" style="margin-bottom:20px;">
+                                <div class="pull-left box1">
+                                <h4 
+                                class="list-group-item-heading" 
+                                style="color:white;">{{ discover.ename }}</h4>
+                                <p 
+                                class="list-group-item-text" 
+                                style="color:white;">Venue : {{ discover.evenue }}</p>
+                                <p 
+                                class="list-group-item-text" 
+                                style="color:white;">Registrations : {{ discover.registrations }}</p>
+                                </div>
+                                <span class="pull-right">
+                                    <img 
+                                    [src] = "discover.imagePath" 
+                                    alt="{{ discover.ename }}" 
+                                    class="img-responsive" 
+                                    style="max-height:50px;">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf='tech'>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div
+                    *ngFor="let discover of discover; index as id">
+                        <div *ngIf="discover.category === 'Technology'">
+                            <a 
+                            style="cursor : pointer;"
+                            [routerLink]="['/discover',eventarray[id]]"   
+                            routerLinkActive="active"
+                            class="list-group-item clearfix box" style="margin-bottom:20px;">
+                                <div class="pull-left box1">
+                                    <h4 
+                                    class="list-group-item-heading" 
+                                    style="color:white;">{{ discover.ename }}</h4>
+                                    <p 
+                                    class="list-group-item-text" 
+                                    style="color:white;">Venue : {{ discover.evenue }}</p>
+                                    <p 
+                                    class="list-group-item-text" 
+                                    style="color:white;">Registrations : {{ discover.registrations }}</p>
+                                </div>
+                                <span class="pull-right">
+                                    <img 
+                                    [src] = "discover.imagePath" 
+                                    alt="{{ discover.ename }}" 
+                                    class="img-responsive" 
+                                    style="max-height:50px;">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <hr style="opacity: 0;">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="org"><b>Organising Events For Some Of The Best Names In Country</b></h2>
+        </div>
+    </div>
+    <hr style="opacity: 0;">
+    <hr style="opacity: 0;">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-3"><img src="../../assets/images/ted.png" class="cust" alt="TEDx"></div>
+            <div class="col-md-3"><img src="../../assets/images/rubyconf.png" class="cust" alt="rubyconf"></div>
+            <div class="col-md-3"><img src="../../assets/images/Sul.png" class="cust" alt="startup"></div>
+            <div class="col-md-3"><img src="../../assets/images/indonesiacomic.png" class="cust" alt="ic"></div>
+        </div>
+    </div>
+</div>

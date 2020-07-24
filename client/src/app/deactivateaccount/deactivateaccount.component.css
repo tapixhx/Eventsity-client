@@ -1,0 +1,36 @@
+input.ng-invalid.ng-touched {
+    border : 2px solid red;
+}
+.box {
+    width : 35rem;
+    padding:20px 20px;
+    margin-left : 10rem;
+    font-family: 'Raleway', sans-serif;
+    box-shadow:2px 2px 15px 5px rgba(0,0,0,0.1);
+}
+.mybutton {
+    border : 2px solid red;
+    color : red;
+    background-color : transparent;
+    margin-left : 9rem;
+}
+.mybutton:hover {
+    background-color : red;
+    color : white;
+    transition : all 0.4s ease-in-out;
+}
+.back {
+    height:35px;
+    width:35px;
+    border:2px solid black;
+    color:black;
+    border-radius: 10px;
+    margin-top:25px;
+    margin-left:25px;
+    background-color:transparent;
+}
+.back:hover {
+    color:white;
+    background-color:black;
+    transition:all 0.3s ease-in-out;
+}

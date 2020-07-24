@@ -1,0 +1,25 @@
+input.ng-invalid.ng-touched {
+    border : 2px solid red;
+}
+.box {
+    width:30rem;
+    padding: 20px 25px ;
+    margin-top:20px;
+    box-shadow: 2px 2px 18px 5px rgba(0,0,0,0.1);
+    font-family: 'Ubuntu', sans-serif;
+}
+.mybutton {
+    background-color: transparent;
+    border : 2px solid green;
+    color:black;
+}
+.mybutton:hover {
+    background-color: #0DBDE0;
+    border:2px solid #0DBDE0;
+    transition: all 0.3s ease-in-out;
+}
+.img {
+    margin-left:100px;
+    margin-top: 35px;
+    height : 25rem;
+}

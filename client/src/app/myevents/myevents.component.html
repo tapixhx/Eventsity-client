@@ -1,0 +1,149 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Righteous|Ubuntu&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+</style>
+<ngx-ui-loader></ngx-ui-loader>
+<hr style="opacity:0;">
+<div class="container-fluid">
+    <div class="col-md-5">
+        <div class="col-sm-6 account">
+            <div *ngIf="!activity">
+                <button class="btn show" (click)="onShowActivity()">Show Account Actions</button>
+            </div>
+            <div *ngIf="activity">
+            <h4 class="text-center"><b>Account Actions</b></h4>
+            <hr>
+            <button class="btn logoutall" (click)="logOutfromall()">Log Out From all devices</button>
+            <!-- <hr style="opacity:0;"> -->
+            <button class="btn deactivate" (click)="wantDeactivate()">Deactivate Account</button>
+            <button class="btn hideb" (click)="hideActivity()">Hide</button>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="../../assets/images/myevents.png" class="robo" alt="hello">
+        </div>
+    </div>
+    <div class="col-md-7 font">
+        <h2>So how's you doing {{ uname }}</h2>
+        <hr style="opacity:0;">
+        <p>Go on manage your events and make it a rememberable one!!</p>
+    </div>
+</div>
+<hr style="opacity : 0;">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-6">
+                <div class="boxparent2">
+                    <h2><b>Events Created</b></h2>
+                    <hr>
+                    <h3>Here comes your events you created recently</h3>
+                    <hr style="opacity:0;">
+                    <div
+                    *ngFor="let discover of discover; index as id">
+                        <div
+                        style="cursor : pointer;"
+                        class="list-group-item clearfix box1" style="margin-bottom:20px;">
+                        <div class="pull-left">
+                            <a [routerLink]="['/discover',eventarray[id]]">
+                            <h3 
+                            class="list-group-item-heading" 
+                            style="color:black;">
+                                <b>{{ discover.ename }}</b>
+                            </h3></a>
+                            <p 
+                            class="list-group-item-text" 
+                            style="color:black">Venue : {{ discover.evenue }}</p>
+                            <p 
+                            class="list-group-item-text" 
+                            style="color:black">Date : {{ discover.date }}</p>
+                        </div>
+                        <span class="pull-right">
+                            <img 
+                            [src] = "discover.imagePath" 
+                            alt="{{ discover.ename }}" 
+                            class="img-responsive" 
+                            style="max-height:70px;
+                             margin-bottom:2px;
+                             max-width:80px;">
+
+                            <a 
+                            [routerLink]="['/editevent',eventarray[id]]"><button 
+                            class="glyphicon glyphicon-pencil pull-right edit"></button></a>
+                            <button 
+                            (click)="onDelete(eventarray[id])"
+                            class="glyphicon glyphicon-remove delete"></button>
+                        </span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="boxparent">
+                    <h2><b>Registered Events</b></h2>
+                    <hr>
+                    <h3>Upcoming Events</h3>
+                    <hr style="opacity:0;">
+                    <div
+                    *ngFor="let registered of registered; index as id">
+                        <div 
+                        style="cursor : pointer;"
+                        class="list-group-item clearfix box" style="margin-bottom:20px;">
+                            <div class="pull-left">
+                                <h4 class="list-group-item-heading" style="color:white;">
+                                    <b>{{ registered.ename }}</b>
+                                </h4>
+                                <hr>
+                                <p class="list-group-item-text" style="color:white;">Venue : {{ registered.evenue }}</p>
+                                <p class="list-group-item-text" style="color:white;">Full Venue : {{ registered.fevenue }}</p>
+                                <p class="list-group-item-text" style="color:white;">Organiser : {{ registered.orgname }}</p>
+                                <p class="list-group-item-text" style="color:white;">Event Date : {{ registered.date }}</p>
+                            </div>
+                            <span class="pull-right">
+                                <img 
+                                [src] = "registered.imagePath" 
+                                alt="{{ registered.ename }}" 
+                                class="img-responsive pull-right" 
+                                style="max-height:100px;">
+                            </span>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3>Events You Have Visited</h3>
+                    <hr style="opacity:0;">
+                    <div
+                    *ngFor="let earlierregistered of earlierregistered; index as id">
+                    <div 
+                    style="cursor : pointer;"
+                    class="list-group-item clearfix box" style="margin-bottom:20px;">
+                        <div class="pull-left ">
+                            <h4 class="list-group-item-heading" style="color:white;">
+                                {{ earlierregistered.ename }}
+                            </h4>
+                            <hr>
+                            <p 
+                            class="list-group-item-text" 
+                            style="color:white;">Venue : {{ earlierregistered.evenue }}</p>
+                            <p 
+                            class="list-group-item-text" 
+                            style="color:white;">Full Venue : {{ earlierregistered.fevenue }}</p>
+                            <p 
+                            class="list-group-item-text" 
+                            style="color:white;">Organiser : {{ earlierregistered.orgname }}</p>
+                            <p 
+                            class="list-group-item-text" 
+                            style="color:white;">Event Date : {{ earlierregistered.date }}</p>
+                        </div>
+                        <span class="pull-right">
+                            <img 
+                            [src] = "earlierregistered.imagePath" 
+                            alt="{{ earlierregistered.ename }}" 
+                            class="img-responsive pull-right" 
+                            style="max-height:100px;">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
