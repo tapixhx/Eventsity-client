@@ -83,14 +83,14 @@ export class ServerService {
     verifyUser(otp:string, id:any) {
         // console.log(id);
         const headers = new HttpHeaders({'Content-Type':'application/json'})
-        return this.http.post(this.rootUrl+'/auth/verify/'+id,
+        return this.http.post(this.rootUrl+'/auth/otpVerify/'+id,
         JSON.stringify({otp}),
         {headers: headers});
     }
 
     resendOtp(id:any) {
         const headers = new HttpHeaders({'Content-Type':'application/json'})
-        return this.http.post(this.rootUrl+'/auth/resend/'+id,
+        return this.http.get(this.rootUrl+'/auth/otpResend/'+id,
         {headers: headers});
     }
 

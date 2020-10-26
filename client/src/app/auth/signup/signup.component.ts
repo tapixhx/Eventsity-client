@@ -31,14 +31,14 @@ export class SignupComponent implements OnInit {
     .subscribe(
       (response) => {
         this.uid = response;
-        console.log(response);
+        // console.log(response);
         // console.log(this.uid.userId);
         this.ngxService.stop(); 
-        // this.route.navigate(['/verify',this.uid.userId]);
+        this.route.navigate(['/verify',this.uid.userId]);
         // form.reset();
       },
       (error: HttpErrorResponse) =>{
-        console.log(error);
+        // console.log(error);
         this.errorMsg = error.error.data[0].msg;
         this.ngxService.stop();
         Swal.fire({

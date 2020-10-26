@@ -38,7 +38,7 @@ export class VerificationComponent implements OnInit {
     this.serverservice.resendOtp(this.id)
     .subscribe(
       (response) =>{
-        //  console.log(response);
+         console.log(response);
          this.ngxService.stop();
          Swal.fire({
            type:'success',
@@ -48,7 +48,7 @@ export class VerificationComponent implements OnInit {
          })
         },
       (error) =>{ 
-        // console.log(error);
+        console.log(error);
         this.ngxService.stop();
         Swal.fire({
           type:'error',

@@ -45,7 +45,7 @@ export class MyeventsComponent implements OnInit {
     .subscribe(
       (response) =>{
         this.res = response;
-        console.log(this.res);
+        // console.log(this.res);
         this.ngxService.stop();
         this.discover = this.res.events;
         for(this.i=0; this.i<this.discover.length; this.i++) {
@@ -58,7 +58,7 @@ export class MyeventsComponent implements OnInit {
         }
       },
       (error : HttpErrorResponse) =>{ 
-        console.log(error);
+        // console.log(error);
         if(error.error.message === "Not authenticated.") {
           localStorage.removeItem('token');
           localStorage.removeItem('name');

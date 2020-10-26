@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.serverservice.logInUser(value.email,value.password)
     .subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         this.tk = response ;
         // console.log(this.name.name);
         localStorage.setItem('token', this.tk.token);
@@ -47,13 +47,14 @@ export class LoginComponent implements OnInit {
         // this.route.navigate(['/']);
       },
       (error: HttpErrorResponse) =>{
-        console.log(error)
+        // console.log(error);
         this.errormsg = error.error.message;
+        // console.log(this.errormsg);
         this.ngxService.stop();
         if(this.errormsg === "User is not verified") {
-          this.uid = error.error;
-          // console.log(this.uid.userId);
-          this.route.navigate(['/verify',this.uid.userId])
+          this.uid = error.error.userId;
+          // console.log(this.uid);
+          this.route.navigate(['/verify',this.uid])
         }
         Swal.fire({
           type: 'error',
