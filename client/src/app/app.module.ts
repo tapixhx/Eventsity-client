@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderModule } from  'ngx-ui-loader';
 
@@ -59,6 +59,7 @@ import { DeactivateaccountComponent } from './deactivateaccount/deactivateaccoun
     BrowserModule,
     AppRoutingModule,
     NgxUiLoaderModule,
+    ReactiveFormsModule,
   ],
   providers: [ServerService, DiscoverService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

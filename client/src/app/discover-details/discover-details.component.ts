@@ -19,6 +19,7 @@ export class DiscoverDetailsComponent implements OnInit {
   eventid:any;
   forid:any;
   show = false;
+  myUrl:any;
 
   constructor(private route:ActivatedRoute,
               private router:Router,
@@ -27,6 +28,7 @@ export class DiscoverDetailsComponent implements OnInit {
 
   
   ngOnInit() {
+    this.myUrl = this.serverservice.rootUrl;
     this.ngxService.start();
 
     this.eventid = this.route.snapshot.params.id;
@@ -44,6 +46,7 @@ export class DiscoverDetailsComponent implements OnInit {
         this.res=response
         // console.log(this.res.event);
         this.discover = this.res.event;
+        this.discover.imagePath = this.myUrl+"/"+this.discover.imagePath.slice(7);
         this.show = true;
         this.ngxService.stop();
       },

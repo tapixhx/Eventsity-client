@@ -24,12 +24,14 @@ export class MyeventsComponent implements OnInit {
   id:number;
   eventarray:number[]=[];
   activity = false;
+  myUrl:any;
 
   constructor(private serverservice : ServerService,
               private ngxService: NgxUiLoaderService,
               private router : Router) { }
 
   ngOnInit() {
+    this.myUrl = this.serverservice.rootUrl;
   this.uname=localStorage.getItem('name');
 
   this.ngxService.start();
@@ -50,6 +52,7 @@ export class MyeventsComponent implements OnInit {
         this.discover = this.res.events;
         for(this.i=0; this.i<this.discover.length; this.i++) {
           this.id = this.discover[this.i]._id;
+          this.discover[this.i].imagePath = this.myUrl+"/"+this.discover[this.i].imagePath.slice(7);
           // console.log(this.id);
           for(this.j=this.i; this.j<this.i+1; this.j++) {
             this.eventarray.push(this.id);

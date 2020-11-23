@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServerService } from '../services/server.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -17,7 +17,9 @@ export class CreateComponent implements OnInit {
   socialtype=false;
   techtype=false;
   errormsg:string;
-  selectedFile = null;
+  selectedFile: File = null;
+  eventForm: FormGroup;
+  res: any;
 
 
   constructor(private router : Router,
@@ -25,18 +27,47 @@ export class CreateComponent implements OnInit {
               private ngxService: NgxUiLoaderService) { }
 
   ngOnInit() {
+    this.eventForm = new FormGroup({
+      'ename' : new FormControl(null, Validators.required),
+      'imagePath' : new FormControl(null, Validators.required),
+      'category' : new FormControl(null, Validators.required),
+      'evenue' : new FormControl(null, Validators.required),
+      'fevenue' : new FormControl(null, Validators.required),
+      'date' : new FormControl(null, Validators.required),
+      'description' : new FormControl(null, Validators.required),
+    });
+  }
+
+  onFileSelected(event) {
+    this.selectedFile = <File>event.target.files[0];
   }
 
   onCreate(form : NgForm) {
-    this.ngxService.start();
-    // console.log('Entered Create');
+    // this.ngxService.start();
     const value = form.value;
-    this.serverservice.createEvent(value.ename, value.category, value.evenue, value.fevenue, value.imagePath, 
-      value.date, value.orgname, value.description)
+    const fd = new FormData();
+    fd.append('ename', value.ename);
+    fd.append('category', value.category);
+    fd.append('evenue', value.evenue);
+    fd.append('fevenue', value.fevenue);
+    fd.append('imagePath', this.selectedFile);
+    fd.append('imagePath', value.imagePath);
+    fd.append('date', value.date);
+    fd.append('description', value.description);
+
+    // this.serverservice.createEvent(value.ename, value.category, value.evenue, value.fevenue, this.selectedFile, 
+    //   value.date, value.orgname, value.description)
+    this.serverservice.createEvent(fd)
       .subscribe(
         (response) =>{ 
           console.log(response);
+          this.res=response;
           this.ngxService.stop();
+          Swal.fire({
+            type: 'success',
+            title: 'Wohoo!!',
+            text: this.res.message,
+          })
           // this.router.navigate(['/discover']);
         },
         (error:HttpErrorResponse) =>{ 

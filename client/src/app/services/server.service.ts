@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ServerService {
     body:{};
 
-    private rootUrl = "http://localhost:8080";
+    public rootUrl = "http://localhost:8080";
 
     constructor(private http: HttpClient) {}
 
@@ -28,15 +28,26 @@ export class ServerService {
         {headers: headers});
     }
 
-    createEvent(ename: string,category: string,evenue: string,fevenue: string,imagePath: string, 
-        date: string, orgname: string, description: string) {
+    // createEvent(ename: string,category: string,evenue: string,fevenue: string,imagePath: File, 
+    //     date: string, orgname: string, description: string) {
+    //      const token = localStorage.getItem('token')
+    //      const headers = new HttpHeaders({
+    //        'Content-Type':'application/json',
+    //         'Authorization': `Bearer `+token,
+    //      })
+    //     return this.http.post(this.rootUrl+'/api/register',
+    //         JSON.stringify({ename, category, evenue, imagePath, date, description}),
+    //         {headers: headers});
+    // }
+
+    createEvent(formdata: FormData) {
          const token = localStorage.getItem('token')
          const headers = new HttpHeaders({
-           'Content-Type':'application/json',
             'Authorization': `Bearer `+token,
          })
+         console.log(formdata);
         return this.http.post(this.rootUrl+'/api/register',
-            JSON.stringify({ename, category, evenue, imagePath, date, description}),
+            formdata,
             {headers: headers});
     }
 

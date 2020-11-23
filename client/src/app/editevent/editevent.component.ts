@@ -32,7 +32,7 @@ export class EditeventComponent implements OnInit {
         console.log(this.res);
         this.editform.setValue({
           ename : this.res.event.ename,
-          imagePath : this.res.event.imagePath,
+          // imagePath : this.res.event.imagePath,
           category : this.res.event.category,
           evenue : this.res.event.evenue,
           // fevenue : this.res.event.fevenue,
