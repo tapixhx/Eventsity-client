@@ -66,7 +66,7 @@ export class DiscoverComponent implements OnInit {
         this.discover = this.res.events;
         for(this.i=0; this.i<this.discover.length; this.i++) {
           this.id = this.discover[this.i]._id;
-          this.discover[this.i].imagePath = this.myUrl+"/"+this.discover[this.i].imagePath.slice(7);
+          // this.discover[this.i].imagePath = this.myUrl+"/"+this.discover[this.i].imagePath.slice(7);
           // console.log(this.discover[this.i].imagePath);
           for(this.j=this.i; this.j<this.i+1; this.j++) {
             this.eventarray.push(this.id);

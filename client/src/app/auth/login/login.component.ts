@@ -44,10 +44,10 @@ export class LoginComponent implements OnInit {
           showConfirmButton:false,
           timer : 2000,
         })
-        // this.route.navigate(['/']);
+        this.route.navigate(['/']);
       },
       (error: HttpErrorResponse) =>{
-        // console.log(error);
+        console.log(error);
         this.errormsg = error.error.message;
         // console.log(this.errormsg);
         this.ngxService.stop();

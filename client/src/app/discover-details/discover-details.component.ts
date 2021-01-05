@@ -44,9 +44,10 @@ export class DiscoverDetailsComponent implements OnInit {
     .subscribe(
       (response) =>{
         this.res=response
-        // console.log(this.res.event);
+        console.log(this.res.event);
         this.discover = this.res.event;
-        this.discover.imagePath = this.myUrl+"/"+this.discover.imagePath.slice(7);
+        // this.discover.imagePath = this.myUrl+"/"+this.discover.imagePath.slice(7);
+      
         this.show = true;
         this.ngxService.stop();
       },

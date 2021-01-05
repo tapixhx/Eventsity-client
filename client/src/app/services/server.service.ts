@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ServerService {
     body:{};
 
-    public rootUrl = "http://localhost:8080";
+    public rootUrl = "https://eventsity.herokuapp.com";
 
     constructor(private http: HttpClient) {}
 
